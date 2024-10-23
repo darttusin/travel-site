@@ -1,0 +1,16 @@
+.footer {
+    display: flex;
+    flex-direction: column; /* Вертикальная компоновка */
+    align-items: center; /* Центрируем элементы по горизонтали */
+    padding: 20px; /* Отступы внутри футера */
+    background-color: #d3d3d3; /* Серый цвет фона для футера */
+  }
+  
+  .footer-content {
+    text-align: center; /* Центрируем текст внутри футера */
+  }
+  
+  .footer p {
+    margin: 5px 0; /* Отступы между абзацами */
+    color: gray; /* Цвет текста, такой же как у кнопок в заголовке */
+  }

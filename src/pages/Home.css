@@ -1,0 +1,23 @@
+body {
+    margin: 0; /* Убираем отступы по умолчанию */
+  }
+  
+  .home-container {
+    font-family: 'Arial', sans-serif;
+    text-align: center; /* Центрируем текст внутри контейнера */
+    min-height: 100vh; /* Задаем минимальную высоту для контейнера */
+    display: flex; /* Используем Flexbox */
+    flex-direction: column; /* Вертикальная компоновка */
+    justify-content: flex-start; /* Начинаем с верхней части */
+    align-items: center; /* Центрируем по горизонтали */
+    padding: 0 20px; /* Добавляем отступы по бокам для лучшего центрирования */
+  }
+  
+  .main-content {
+    padding-top: 80px; /* Отступ сверху для размещения ниже навигации */
+    display: flex; /* Используем Flexbox для центрирования содержимого */
+    flex-direction: column; /* Вертикальная компоновка */
+    justify-content: center; /* Центрируем по вертикали */
+    align-items: center; /* Центрируем по горизонтали */
+    flex-grow: 1; /* Позволяем основному содержимому занимать оставшееся пространство */
+  }
