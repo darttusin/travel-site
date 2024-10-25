@@ -1,0 +1,35 @@
+.navigation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: #d3d3d3;
+  }
+  
+  .nav_links {
+    display: flex;
+  }
+  
+  .nav_link {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #646cff;
+    background-color: white;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 1em;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .nav_link:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .nav_link:visited {
+    color: gray;
+  }

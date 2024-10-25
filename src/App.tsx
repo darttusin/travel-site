@@ -1,20 +1,20 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import About from './pages/About';
-import Tours from './pages/Tours'; // Импортируем компонент Tours
-import Navigation from './components/Navigation'; // Импортируем компонент навигации
-import Footer from './components/Footer'; // Импортируем компонент 
+import Tours from './pages/Tours';
+import Navigation from './components/navigation';
+import Footer from './components/footer';
 
 function App() {
   return (
     <BrowserRouter>
-      <Navigation /> {/* Добавляем компонент навигации */}
+      <Navigation /> {}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
-        <Route path="/tours" element={<Tours />} /> {/* Убираем Contacts */}
+        <Route path="/tours" element={<Tours />} /> {}
       </Routes>
-      <Footer /> {/* Добавляем футер */}
+      <Footer /> {}
     </BrowserRouter>
   );
 }

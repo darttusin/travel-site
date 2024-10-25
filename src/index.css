@@ -31,45 +31,45 @@ a:hover {
 }
 
 body {
-  margin: 0; /* Убираем отступы по умолчанию */
-  min-width: 320px; /* Минимальная ширина */
-  min-height: 100vh; /* Минимальная высота */
-  font-family: 'MyCustomFont', sans-serif; /* Шрифт */
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  font-family: 'MyCustomFont', sans-serif;
 }
 
 h1 {
-  font-size: 3.2em; /* Размер заголовка */
-  line-height: 1.1; /* Высота строки */
+  font-size: 3.2em;
+  line-height: 1.1;
 }
 
 button {
-  border-radius: 8px; /* Скругление углов */
-  border: 1px solid transparent; /* Граница кнопки */
-  padding: 0.6em 1.2em; /* Отступы кнопки */
-  font-size: 1em; /* Размер шрифта кнопки */
-  font-weight: 500; /* Жирность шрифта кнопки */
-  font-family: inherit; /* Шрифт кнопки */
-  background-color: #1a1a1a; /* Цвет фона кнопки */
-  cursor: pointer; /* Курсор при наведении на кнопку */
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
 }
 
 button:hover {
-  border-color: #646cff; /* Цвет границы при наведении на кнопку */
+  border-color: #646cff;
 }
 button:focus,
 button:focus-visible {
-    outline: 4px auto -webkit-focus-ring-color; /* Обводка при фокусе */
+    outline: 4px auto -webkit-focus-ring-color;
 }
 
 @media (prefers-color-scheme: light) {
     :root {
-        color: #213547; /* Цвет текста в светлой теме */
-        background-color: #ffffff; /* Цвет фона в светлой теме */
+        color: #213547;
+        background-color: #ffffff;
     }
     a:hover {
-        color: #747bff; /* Цвет ссылок при наведении в светлой теме */
+        color: #747bff;
     }
     button {
-        background-color: #f9f9f9; /* Цвет фона кнопки в светлой теме */
+        background-color: #f9f9f9;
     }
 }

@@ -1,0 +1,16 @@
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #d3d3d3;
+  }
+  
+  .footer-content {
+    text-align: center;
+  }
+  
+  .footer p {
+    margin: 5px 0;
+    color: gray;
+  }
