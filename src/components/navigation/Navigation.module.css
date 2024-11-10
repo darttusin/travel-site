@@ -1,5 +1,5 @@
 .navigation {
-  background-color: rgba(60, 88, 190, 0.75); /* Темно-синий цвет с прозрачностью */
+  background-color: rgba(60, 88, 190, 0.75);
   color: #ffffff;
   padding: 15px;
   position: fixed;
@@ -8,19 +8,19 @@
   top: 0;
   z-index: 1000;
   display: flex;
-  justify-content: space-between; /* Размещаем элементы по краям */
+  justify-content: space-between;
   align-items: center;
 }
 
 .logo {
   font-size: 24px;
-  margin-left: 20px; /* Добавляем отступ слева */
+  margin-left: 20px;
 }
 
 .nav_links {
   display: flex;
-  gap: 15px; /* Уменьшаем отступ между ссылками */
-  margin-right: 50px; /* Добавляем отступ справа */
+  gap: 15px;
+  margin-right: 50px;
 }
 
 .nav_link {

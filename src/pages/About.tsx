@@ -1,4 +1,4 @@
-import './About.css'; // Подключаем стили
+import './About.css';
 
 function About() {
   return (

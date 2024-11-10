@@ -1,4 +1,4 @@
-import './Tours.css'; // Подключаем стили
+import './Tours.css';
 
 function Tours() {
   return (

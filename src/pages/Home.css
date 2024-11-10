@@ -17,7 +17,7 @@
 }
 
 .main-content h1, .main-content h2, .main-content p {
-  text-shadow: 1px 1px 2px rgba(173, 171, 171, 0.3); /* Добавляем тень к тексту */
+  text-shadow: 1px 1px 2px rgba(173, 171, 171, 0.3);
 }
 
 .main-content h2 {
@@ -25,24 +25,12 @@
 }
 
 .main-content p {
-  font-size: 1.5rem; /* Увеличиваем размер текста абзацев */
-  line-height: 1.5; /* Увеличиваем межстрочный интервал для лучшей читаемости */
+  font-size: 1.5rem;
+  line-height: 1.5;
 }
 
 .button-container {
   margin-top: 20px;
-}
-
-.info-section {
-  font-size: 2rem;
-  margin: 20px 0;
-  padding: 15px;
-  border-radius: 8px; /* Закругленные углы */
-}
-
-.info-section h2 {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
 }
 
 .call-to-action {

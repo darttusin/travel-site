@@ -1,6 +1,6 @@
 import { Button } from '../components/button';
-import './Home.css'; // Подключаем стили
-import { Link } from 'react-router-dom'; // Импортируем Link для навигации
+import './Home.css';
+import { Link } from 'react-router-dom';
 
 function Home() {
   return (
@@ -9,7 +9,7 @@ function Home() {
         <h1>Добро пожаловать!</h1>
         <p>Исследуйте новые горизонты и находите вдохновение для следующего приключения.</p>
         <section className="call-to-action">
-          <Link to="/tours"> {/* Используем Link для перехода на страницу Tours */}
+          <Link to="/tours">
             <Button
               label="Начни свое путешествие"
               color="blue"
