@@ -44,10 +44,10 @@ function About() {
   ];
 
   const gids = [
-    {text: "Анна — сертифицированный гид с более чем 10-летним опытом работы в Европе", direction: "Европа", gid: "Анна Смирнова"},
-    {text: "Игорь — эксперт по азиатским странам, с особым акцентом на Японию и Таиланд", direction: "Азия", gid: "Игорь Петров"},
-    {text: "Светлана имеет более 8 лет опыта работы в Южной Америке", direction: "Южная Америка", gid: "Светлана Кузнецова"},
-    {text: "Дмитрий — гид по России, специализирующийся на экскурсиях по историческим городам", direction: "Россия", gid: "Дмитрий Иванов"},
+    {img_path: "/src/assets/gids/anna.jpg", text: "Анна — сертифицированный гид с более чем 10-летним опытом работы в Европе", direction: "Европа", gid: "Анна Смирнова"},
+    {img_path: "/src/assets/gids/igor.jpg", text: "Игорь — эксперт по азиатским странам, с особым акцентом на Японию и Таиланд", direction: "Азия", gid: "Игорь Петров"},
+    {img_path: "/src/assets/gids/svetlana.jpg", text: "Светлана имеет более 8 лет опыта работы в Южной Америке", direction: "Южная Америка", gid: "Светлана Кузнецова"},
+    {img_path: "/src/assets/gids/dmitri.jpg", text: "Дмитрий — гид по России, специализирующийся на экскурсиях по историческим городам", direction: "Россия", gid: "Дмитрий Иванов"},
   ]
 
   return (
@@ -68,6 +68,7 @@ function About() {
         <div className="review-slider">
           <button className="nav-button" onClick={prevReviewGid}>❮</button>
           <div className="review-card">
+            <img src={gids[currentIndexGid].img_path}/>
             <p>"{gids[currentIndexGid].text}"</p>
             <footer>- {gids[currentIndexGid].gid} {gids[currentIndexGid].direction}</footer>
           </div>
