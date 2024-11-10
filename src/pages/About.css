@@ -1,3 +1,53 @@
-.main-content {
-    padding-top: 80px;
-  }
+.main-content-about {
+  padding-top: 80px;
+  color: black;
+  font-size: 2rem;
+}
+
+.review-slider {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  margin: 20px 0;
+
+}
+
+
+.review-card {
+
+  padding: 20px;
+
+  background: #f9f9f9;
+
+  border: 1px solid #ddd;
+
+  color: black;
+
+  border-radius: 8px;
+
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  text-align: center;
+
+  width: 300px;
+
+}
+
+
+.nav-button {
+
+  background: none;
+
+  border: none;
+
+  font-size: 24px;
+
+  cursor: pointer;
+
+  margin: 0 10px;
+
+}
