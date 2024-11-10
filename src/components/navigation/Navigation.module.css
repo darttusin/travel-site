@@ -1,35 +1,34 @@
 .navigation {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 5px 0;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    background-color: #d3d3d3;
-  }
-  
-  .nav_links {
-    display: flex;
-  }
-  
-  .nav_link {
-    margin: 0 10px;
-    text-decoration: none;
-    color: #646cff;
-    background-color: white;
-    border-radius: 8px;
-    padding: 10px 20px;
-    font-size: 1em;
-    transition: background-color 0.3s, color 0.3s;
-  }
-  
-  .nav_link:hover {
-    background-color: #f0f0f0;
-  }
-  
-  .nav_link:visited {
-    color: gray;
-  }
+  background-color: rgba(10, 24, 74, 0.8); /* Темно-синий цвет с прозрачностью */
+  color: #ffffff;
+  padding: 15px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between; /* Размещаем элементы по краям */
+  align-items: center;
+}
+
+.logo {
+  font-size: 24px;
+  margin-left: 20px; /* Добавляем отступ слева */
+}
+
+.nav_links {
+  display: flex;
+  gap: 15px; /* Уменьшаем отступ между ссылками */
+  margin-right: 20px; /* Добавляем отступ справа */
+}
+
+.nav_link {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.nav_link:hover {
+  text-decoration: underline;
+  color: #e9c46a;
+}

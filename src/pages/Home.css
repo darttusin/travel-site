@@ -1,23 +1,14 @@
-body {
-    margin: 0;
-  }
-  
 .home-container {
-  background-image: url('../assets/images/beach.jpg');
+  background-image: url('../assets/images/background.jpg');
   background-size: cover;
   background-position: center;
   height: 100vh;
   display: flex;
-  align-items: center;
   justify-content: center;
-  color: white;
+  align-items: center;
+  text-align: center;
 }
 
-.main-content {
-  padding-top: 80px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  flex-grow: 1;
+.button-container {
+  margin-top: 20px;
 }

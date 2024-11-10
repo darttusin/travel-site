@@ -1,9 +1,9 @@
-import styles from './Footer.module.css';
+import './Footer.module.css'; // Подключаем стили для футера
 
 function Footer() {
   return (
-    <footer className={`${styles.footer}`}>
-      <div className={`${styles.footer_content}`}>
+    <footer className="footer">
+      <div className="footer-content">
         <p>Контакты:</p>
         <p>Email: example@example.com</p>
         <p>Телефон: +1 (234) 567-8901</p>
