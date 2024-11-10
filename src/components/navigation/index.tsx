@@ -7,8 +7,8 @@ function Navigation() {
       <h1 className={styles.logo}>Мир Путешествий</h1>
       <div className={`${styles.nav_links}`}>
         <Link to="/" className={`${styles.nav_link}`}>Главная</Link>
-        <Link to="/about" className={`${styles.nav_link}`}>О нас</Link>
         <Link to="/tours" className={`${styles.nav_link}`}>Туры</Link>
+        <Link to="/about" className={`${styles.nav_link}`}>О нас</Link>
       </div>
     </nav>
   );
