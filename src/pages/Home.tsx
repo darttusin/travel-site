@@ -1,6 +1,6 @@
 import { Button } from '../components/button';
-import './Home.css';
-import { Link } from 'react-router-dom';
+import './Home.css'; // Подключаем стили
+import { Link } from 'react-router-dom'; // Импортируем Link для навигации
 
 function Home() {
   return (
@@ -8,15 +8,15 @@ function Home() {
       <main className="main-content">
         <h1>Добро пожаловать!</h1>
         <p>Исследуйте новые горизонты и находите вдохновение для следующего приключения.</p>
-        <div className="button-container">
-          <Link to="/tours">
+        <section className="call-to-action">
+          <Link to="/tours"> {/* Используем Link для перехода на страницу Tours */}
             <Button
               label="Начни свое путешествие"
               color="blue"
               size="large"
             />
           </Link>
-        </div>
+        </section>
       </main>
     </div>
   );

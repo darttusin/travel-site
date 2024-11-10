@@ -1,7 +1,14 @@
-.footer {
-  background-color: #264653;
-  color: #ffffff;
+.icons {
+  display: flex;
+}
+
+a {
+  margin: 10px 10px;
+}
+
+footer {
+  margin: 20px;
   text-align: center;
-  padding: 20px;
-  margin-top: 20px;
+  color: black;
+  /* position: fixed; */
 }
