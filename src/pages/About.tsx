@@ -1,25 +1,37 @@
 import './About.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 function About() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [currentIndexGid, setCurrentIndexGid] = useState(0);
+  const [visible, setVisible] = useState(true);
 
   const nextReview = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % reviews.length);
-  };
+    setVisible(false);
+    setTimeout(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % reviews.length);
+      setVisible(true);
+    }, 500);
 
-  const prevReview = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + reviews.length) % reviews.length);
   };
 
   const nextReviewGid = () => {
-    setCurrentIndexGid((prevIndex) => (prevIndex + 1) % gids.length);
+    setVisible(false);
+    setTimeout(() => {
+      setCurrentIndexGid((prevIndex) => (prevIndex + 1) % gids.length);
+      setVisible(true);
+    }, 500);
+
   };
 
-  const prevReviewGid = () => {
-    setCurrentIndexGid((prevIndex) => (prevIndex - 1 + gids.length) % gids.length);
-  };
+  // const prevReview = () => {
+  //   setCurrentIndex((prevIndex) => (prevIndex - 1 + reviews.length) % reviews.length);
+  // };
+
+  // const prevReviewGid = () => {
+  //   setCurrentIndexGid((prevIndex) => (prevIndex - 1 + gids.length) % gids.length);
+  // };
+  
   const reviews = [
     {
       text: "Путешествие с 'Мир Путешествий' было просто великолепным! Наш гид был очень знающим и отзывчивым. Мы увидели места, о которых даже не догадывались!",
@@ -50,6 +62,20 @@ function About() {
     {img_path: "/src/assets/gids/dmitri.jpg", text: "Дмитрий — гид по России, специализирующийся на экскурсиях по историческим городам", direction: "Россия", gid: "Дмитрий Иванов"},
   ]
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      nextReviewGid();
+    }, 4000);
+    return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      nextReview();
+    }, 4000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div className="main-content-about">
       <h1>О нас</h1>
@@ -66,24 +92,24 @@ function About() {
         </p>
 
         <div className="review-slider">
-          <button className="nav-button" onClick={prevReviewGid}>❮</button>
-          <div className="review-card">
+          {/* <button className="nav-button" onClick={prevReviewGid}>❮</button> */}
+          <div className={`review-card ${visible ? 'visible' : 'hidden'}`}>
             <img src={gids[currentIndexGid].img_path}/>
             <p>"{gids[currentIndexGid].text}"</p>
             <footer>- {gids[currentIndexGid].gid} {gids[currentIndexGid].direction}</footer>
           </div>
-          <button className="nav-button" onClick={nextReviewGid}>❯</button>
+          {/* <button className="nav-button" onClick={nextReviewGid}>❯</button> */}
         </div>
 
       <h2>Отзывы наших клиентов</h2>
 
       <div className="review-slider">
-        <button className="nav-button" onClick={prevReview}>❮</button>
-        <div className="review-card">
+        {/* <button className="nav-button" onClick={prevReview}>❮</button> */}
+        <div className={`review-card ${visible ? 'visible' : 'hidden'}`}>
           <p>"{reviews[currentIndex].text}"</p>
           <footer>- {reviews[currentIndex].author}</footer>
         </div>
-        <button className="nav-button" onClick={nextReview}>❯</button>
+        {/* <button className="nav-button" onClick={nextReview}>❯</button> */}
       </div>
 
     </div>
