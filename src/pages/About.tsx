@@ -23,14 +23,6 @@ function About() {
     }, 500);
 
   };
-
-  // const prevReview = () => {
-  //   setCurrentIndex((prevIndex) => (prevIndex - 1 + reviews.length) % reviews.length);
-  // };
-
-  // const prevReviewGid = () => {
-  //   setCurrentIndexGid((prevIndex) => (prevIndex - 1 + gids.length) % gids.length);
-  // };
   
   const reviews = [
     {
@@ -79,37 +71,46 @@ function About() {
   return (
     <div className="main-content-about">
       <h1>О нас</h1>
-        <p>
-          Мы — компания "Мир Путешествий", и наша цель — подарить вам незабываемые впечатления от путешествий по самым красивым уголкам мира. 
-          С момента нашего основания в 2010 году, мы стремимся предоставить нашим клиентам только лучшие туры и сервис.
-        </p>
+        <div className="section">
+          <p>
+            Мы — компания "Мир Путешествий", и наша цель — подарить вам незабываемые впечатления от путешествий по самым красивым уголкам мира. 
+            С момента нашего основания в 2010 году, мы стремимся предоставить нашим клиентам только лучшие туры и сервис.
+          </p>
+        </div>
+
+        <h2>Почему выбирают нас?</h2>
+        <div className="section">
+          <ul>
+            <li>Профессиональные гиды с многолетним опытом.</li>
+            <li>Индивидуальный подход к каждому клиенту.</li>
+            <li>Широкий выбор туров по всему миру.</li>
+            <li>Высокое качество обслуживания и внимание к деталям.</li>
+          </ul>
+        </div>
 
         <h2>Наши гиды</h2>
-
-        <p>
-          Все наши гиды — это профессионалы с многолетним опытом работы в туристической сфере. Они не только отлично знают историю и культуру мест, которые мы посещаем, но и умеют сделать ваше путешествие комфортным и интересным. 
-          Мы тщательно отбираем наших гидов, чтобы вы могли наслаждаться каждым моментом вашего путешествия.
-        </p>
+        <div className="section">
+          <p>
+            Все наши гиды — это профессионалы с многолетним опытом работы в туристической сфере. Они не только отлично знают историю и культуру мест, которые мы посещаем, но и умеют сделать ваше путешествие комфортным и интересным. 
+            Мы тщательно отбираем наших гидов, чтобы вы могли наслаждаться каждым моментом вашего путешествия.
+          </p>
+        </div>
 
         <div className="review-slider">
-          {/* <button className="nav-button" onClick={prevReviewGid}>❮</button> */}
           <div className={`review-card ${visible ? 'visible' : 'hidden'}`}>
             <img src={gids[currentIndexGid].img_path}/>
             <p>"{gids[currentIndexGid].text}"</p>
             <footer>- {gids[currentIndexGid].gid} {gids[currentIndexGid].direction}</footer>
           </div>
-          {/* <button className="nav-button" onClick={nextReviewGid}>❯</button> */}
         </div>
 
       <h2>Отзывы наших клиентов</h2>
 
       <div className="review-slider">
-        {/* <button className="nav-button" onClick={prevReview}>❮</button> */}
         <div className={`review-card ${visible ? 'visible' : 'hidden'}`}>
           <p>"{reviews[currentIndex].text}"</p>
           <footer>- {reviews[currentIndex].author}</footer>
         </div>
-        {/* <button className="nav-button" onClick={nextReview}>❯</button> */}
       </div>
 
     </div>
