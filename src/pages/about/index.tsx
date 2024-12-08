@@ -3,71 +3,85 @@ import './Card.css';
 import { useState, useEffect } from 'react';
 
 function About() {
+  const [reviews, setReviews] = useState([]);
+  const [gids, setGids] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [currentIndexGid, setCurrentIndexGid] = useState(0);
   const [visible, setVisible] = useState(true);
+  const [loading, setLoading] = useState(true);
+
+  const fetchReviews = async () => {
+    try {
+      const response = await fetch('http://localhost:8000/reviews');
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      const data = await response.json();
+      setReviews(data.reviews);
+    } catch (error) {
+      console.error('Ошибка при получении отзывов:', error);
+    }
+  };
+
+  const fetchGids = async () => {
+    try {
+      const response = await fetch('http://localhost:8000/gids');
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      const data = await response.json();
+      setGids(data.gids);
+    } catch (error) {
+      console.error('Ошибка при получении гидов:', error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchReviews();
+    fetchGids();
+  }, []);
 
   const nextReview = () => {
-    setVisible(false);
-    setTimeout(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % reviews.length);
-      setVisible(true);
-    }, 500);
-
-  };
-
-  const nextReviewGid = () => {
-    setVisible(false);
-    setTimeout(() => {
-      setCurrentIndexGid((prevIndex) => (prevIndex + 1) % gids.length);
-      setVisible(true);
-    }, 500);
-
+    if (reviews.length > 0) {
+      setVisible(false);
+      setTimeout(() => {
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % reviews.length);
+        setVisible(true);
+      }, 500);
+    }
   };
   
-  const reviews = [
-    {
-      text: "Путешествие с 'Мир Путешествий' было просто великолепным! Наш гид был очень знающим и отзывчивым. Мы увидели места, о которых даже не догадывались!",
-      author: "Анна, Москва"
-    },
-    {
-      text: "Отличная организация и внимание к деталям. Я рекомендую эту компанию всем своим друзьям!",
-      author: "Сергей, Санкт-Петербург"
-    },
-    {
-      text: "Я был в восторге от тура! Все было организовано на высшем уровне, и я получил массу положительных эмоций. Обязательно вернусь снова!",
-      author: "Дмитрий, Казань"
-    },
-    {
-      text: "Наш гид был настоящим профессионалом! Он сделал наше путешествие незабываемым, рассказывая интересные факты и истории о местах, которые мы посещали.",
-      author: "Елена, Новосибирск"
-    },
-    {
-      text: "Прекрасный сервис и внимание к клиентам! Я чувствовал себя в безопасности и комфорте на протяжении всего тура. Спасибо!",
-      author: "Максим, Екатеринбург"
+  const nextReviewGid = () => {
+    if (gids.length > 0) {
+      setVisible(false);
+      setTimeout(() => {
+        setCurrentIndexGid((prevIndex) => (prevIndex + 1) % gids.length);
+        setVisible(true);
+      }, 500);
     }
-  ];
-
-  const gids = [
-    {img_path: "/src/assets/gids/anna.jpg", text: "Анна — сертифицированный гид с более чем 10-летним опытом работы в Европе", direction: "Европа", gid: "Анна Смирнова"},
-    {img_path: "/src/assets/gids/igor.jpg", text: "Игорь — эксперт по азиатским странам, с особым акцентом на Японию и Таиланд", direction: "Азия", gid: "Игорь Петров"},
-    {img_path: "/src/assets/gids/svetlana.jpg", text: "Светлана имеет более 8 лет опыта работы в Южной Америке", direction: "Южная Америка", gid: "Светлана Кузнецова"},
-    {img_path: "/src/assets/gids/dmitri.jpg", text: "Дмитрий — гид по России, специализирующийся на экскурсиях по историческим городам", direction: "Россия", gid: "Дмитрий Иванов"},
-  ]
+  };
 
   useEffect(() => {
     const interval = setInterval(() => {
-      nextReviewGid();
+      if (gids.length > 0) {
+        nextReviewGid();
+      }
     }, 4000);
     return () => clearInterval(interval);
-  }, []);
+  }, [gids]);
 
-  useEffect(() => {
+  useEffect(() => {    
     const interval = setInterval(() => {
       nextReview();
     }, 4000);
     return () => clearInterval(interval);
-  }, []);
+  }, [reviews]);
+
+  if (loading) {
+    return <p>Загрузка данных...</p>;
+  }
 
   return (
     <div className="main-content-about">
@@ -99,9 +113,13 @@ function About() {
 
         <div className="review-slider">
           <div className={`review-card ${visible ? 'visible' : 'hidden'}`}>
-            <img src={gids[currentIndexGid].img_path}/>
-            <p>"{gids[currentIndexGid].text}"</p>
-            <footer>- {gids[currentIndexGid].gid} {gids[currentIndexGid].direction}</footer>
+            <div className="gid-card">
+              <img src={gids[currentIndexGid].img_path} alt="Гид" className="gid-image"/>
+              <div className="gid-text">
+                <p>"{gids[currentIndexGid].text}"</p>
+                <footer>- {gids[currentIndexGid].gid}. Направление: {gids[currentIndexGid].direction}</footer>
+              </div>
+            </div>
           </div>
         </div>
 

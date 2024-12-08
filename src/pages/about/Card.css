@@ -13,6 +13,7 @@
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
     transition: transform 0.3s, box-shadow 0.3s; 
     margin: 50px; 
+    width: 900px;
   }
   
   .review-card:hover {
@@ -40,7 +41,7 @@
     font-size: 24px;
     line-height: 1.6;
     color: #333;
-    margin: 0;
+    margin: 10px;
   }
   
   .review-card footer {
@@ -55,4 +56,20 @@
   
   .review-slider .review-card {
     transition: opacity 0.5s ease;
+  }
+
+  .gid-card {
+    display: flex;
+    align-items: center;
+  }
+  
+  .gid-image {
+    width: 200px;
+    height: auto;
+    margin: 15px;
+  }
+  
+  .gid-text {
+    margin-left: 40px;
+    flex: 1;
   }
