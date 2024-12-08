@@ -84,6 +84,10 @@ async def get_tours() -> dict:
         } for i in range(5)]
     }
 
+@app.post("/booking")
+async def book_tour(body: dict) -> None:
+    print(f'{body["tourTitle"]} booked for {body["email"]}')
+    return
 
 app.add_middleware(
     CORSMiddleware,
