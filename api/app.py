@@ -73,14 +73,15 @@ async def get_gids() -> dict:
 async def get_tours() -> dict:
     return {
         "tours": [{
+            "id": i+1,
             "price": random.randint(100, 5000),  # Случайная цена от 100 до 5000
             "display_name": f"Тур {i + 1}",
             "days": random.randint(1, 14),  # Случайное количество дней от 1 до 14
             "difficulty": random.choice(["Легкий", "Средний", "Сложный"]),
             "short_description": f"Описание тура {i + 1}. Это замечательное путешествие.",
-            "start_date": (datetime.now() + timedelta(days=random.randint(1, 30))).strftime("%Y-%m-%d"),
-            "end_date": (datetime.now() + timedelta(days=random.randint(31, 60))).strftime("%Y-%m-%d"),
-        } for i in range(20)]
+            "start_date": (datetime.now() + timedelta(days=random.randint(1, 30))).strftime("%Y:%m:%d"),
+            "end_date": (datetime.now() + timedelta(days=random.randint(31, 60))).strftime("%Y:%m:%d"),
+        } for i in range(5)]
     }
 
 

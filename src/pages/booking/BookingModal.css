@@ -1,0 +1,47 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8); /* Более темный фон для лучшего контраста */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Убедитесь, что модальное окно выше других элементов */
+  }
+  
+  .modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    max-width: 500px; /* Ограничьте ширину, чтобы окно не было слишком широким */
+    width: 100%; /* Занимает всю ширину доступного пространства */
+  }
+
+  .modal-buttons {
+    display: flex;
+    justify-content: space-between; /* Распределяет кнопки по краям */
+    margin-top: 20px; /* Отступ сверху для кнопок */
+  }
+  
+  .modal-button {
+    background-color: #007bff; /* Цвет фона кнопки */
+    color: white; /* Цвет текста */
+    border: none; /* Убираем рамку */
+    padding: 10px 20px; /* Отступы внутри кнопки */
+    border-radius: 5px; /* Закругленные углы */
+    cursor: pointer; /* Указатель при наведении */
+    transition: background-color 0.3s; /* Плавный переход цвета фона */
+  }
+  
+  .modal-button:hover {
+    background-color: #0056b3; /* Цвет фона при наведении */
+  }
+
+.modal-text {
+  font-size: 1em;
+  color: #666;
+  margin: 8px 0;
+}

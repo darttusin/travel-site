@@ -1,43 +1,26 @@
 .tours {
-  padding: 40px;
-  text-align: center;
+  padding: 40px; /* Увеличьте отступы вокруг всей секции */
   background-color: #f9f9f9;
+  text-align: center;
+}
+
+.tours h1 {
+  font-size: 2.5rem;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  color: #333;
 }
 
 .tours-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
+  gap: 30px; /* Увеличьте отступы между карточками */
+  padding: 20px; /* Добавьте внутренние отступы для контейнера */
 }
 
-.tour-card {
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  transition: transform 0.3s;
-}
-
-.tour-card:hover {
-  transform: scale(1.05);
-}
-
-.tour-card img {
-  width: 100%;
-  height: auto;
-}
-
-.tour-card h2 {
-  font-size: 1.5em;
-  color: #333;
-}
-
-.tour-card p {
-  color: #666;
-}
-
-.tour-card .price {
-  font-weight: bold;
-  color: #007BFF;
+.tours-container > div {
+  flex: 1 1 350px; /* Минимальная ширина карточки 350px */
+  max-width: 450px; /* Максимальная ширина карточки 450px */
+  margin: 0 10px; /* Добавьте отступы по бокам для карточек */
 }

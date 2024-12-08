@@ -1,38 +1,81 @@
 .tour-card {
-    background: linear-gradient(to bottom right, #e0f7fa, #ffffff);
-    border-radius: 10px;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-    padding: 20px;
-    max-width: 300px;
-    text-align: left;
-    margin: 20px;
-    transition: transform 0.3s;
-  }
-  
-  .tour-card:hover {
-    transform: translateY(-5px);
-  }
-  
-  .tour-image {
-    width: 100%;
-    border-radius: 10px;
-  }
-  
-  .tour-price {
-    font-weight: bold;
-    color: #d32f2f;
-  }
-  
-  .btn {
-    background-color: #00796b;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 15px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .btn:hover {
-    background-color: #004d40;
-  }
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 16px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.tour-card:hover {
+  transform: scale(1.02);
+}
+
+.tour-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.tour-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tour-title {
+  font-size: 1.5em;
+  color: #333;
+  margin: 0;
+}
+
+.tour-price {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #007bff; /* Синий цвет для цены */
+}
+
+.tour-description {
+  font-size: 1em;
+  color: #666;
+  margin: 8px 0;
+}
+
+.tour-details {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+}
+
+.tour-detail {
+  display: flex;
+  align-items: center;
+}
+
+.tour-icon {
+  margin-right: 8px;
+  color: #007bff; /* Синий цвет для иконок */
+}
+
+.tour-text {
+  font-size: 0.9em;
+  color: #555;
+}
+
+.tour-button {
+  margin-top: 16px;
+  padding: 10px 15px;
+  background-color: #007bff; /* Синий цвет для кнопки */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s;
+}
+
+.tour-button:hover {
+  background-color: #0056b3; /* Темнее при наведении */
+}
