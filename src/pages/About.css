@@ -2,6 +2,9 @@
   padding-top: 80px;
   color: black;
   font-size: 2rem;
+  background-image: url('../assets/images/airplane.jpeg');
+  background-size: cover;
+  background-position: center;
 }
 
 .review-slider {
