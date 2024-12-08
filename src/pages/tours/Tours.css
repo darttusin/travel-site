@@ -1,5 +1,5 @@
 .tours {
-  padding: 40px; /* Увеличьте отступы вокруг всей секции */
+  padding: 40px;
   background-color: #f9f9f9;
   text-align: center;
 }
@@ -15,12 +15,26 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 30px; /* Увеличьте отступы между карточками */
-  padding: 20px; /* Добавьте внутренние отступы для контейнера */
+  gap: 30px; 
+  padding: 20px; 
 }
 
 .tours-container > div {
-  flex: 1 1 350px; /* Минимальная ширина карточки 350px */
-  max-width: 450px; /* Максимальная ширина карточки 450px */
-  margin: 0 10px; /* Добавьте отступы по бокам для карточек */
+  flex: 1 1 350px; 
+  max-width: 450px; 
+  margin: 0 10px; 
+}
+
+.notification {
+  width: 300px;
+  position: fixed; 
+  top: 80px; 
+  right: 20px; 
+  background-color: #d4edda; 
+  color: #155724; 
+  padding: 15px; 
+  border: 1px solid #c3e6cb; 
+  border-radius: 10px; 
+  z-index: 1000; 
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
 }

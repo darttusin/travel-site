@@ -20,6 +20,7 @@ function Tours () {
   const [error, setError] = useState<string | null>(null);
   const [isModalOpen, setModalOpen] = useState(false);
   const [selectedTourTitle, setSelectedTourTitle] = useState('');
+  const [notification, setNotification] = useState<string | null>(null);
 
   useEffect(() => {
     const fetchTours = async () => {
@@ -62,6 +63,15 @@ function Tours () {
     setSelectedTourTitle('');
   };
 
+  const handleConfirmBooking = () => {
+    setNotification(`Бронирование на тур "${selectedTourTitle}" подтверждено! Мы свяжемся с вами по вашей почте!`);
+    handleCloseModal();
+
+    setTimeout(() => {
+      setNotification(null);
+    }, 3000);
+  };
+
   return (
     <div className="tours">
       <h1>Наши Туры</h1>
@@ -81,7 +91,13 @@ function Tours () {
           />
         ))}
       </div>
-      <BookingModal isOpen={isModalOpen} onClose={handleCloseModal} tourTitle={selectedTourTitle} />
+      <BookingModal 
+        isOpen={isModalOpen} 
+        onClose={handleCloseModal} 
+        tourTitle={selectedTourTitle} 
+        onConfirm={handleConfirmBooking}
+      />
+      {notification && <div className="notification">{notification}</div>}
     </div>
   );
 };
