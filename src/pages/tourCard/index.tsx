@@ -2,20 +2,25 @@ import React from 'react';
 import './TourCard.css';
 
 interface TourCardProps {
-//   image: string;
   title: string;
   description: string;
   price: string;
+  days: number;
+  difficulty: string;
+  startDate: string;
+  endDate: string;
 }
 
-const TourCard: React.FC<TourCardProps> = ({ title, description, price }) => {
+const TourCard: React.FC<TourCardProps> = ({ title, description, price, days, difficulty, startDate, endDate }) => {
   return (
     <div className="tour-card">
-      {/* <img src={image} alt={title} className="tour-image" /> */}
       <h2>{title}</h2>
       <p>{description}</p>
-      <div className="tour-price">{price}</div>
-      <button className="btn">Подробнее</button>
+      <p>{price}</p>
+      <p>Дней: {days}</p>
+      <p>Сложность: {difficulty}</p>
+      <p>Дата начала: {startDate}</p>
+      <p>Дата окончания: {endDate}</p>
     </div>
   );
 };

@@ -2,9 +2,21 @@ import './About.css';
 import './Card.css';
 import { useState, useEffect } from 'react';
 
+interface Gid {
+  img_path: string;
+  text: string;
+  gid: string;
+  direction: string;
+}
+
+interface Review {
+  text: string;
+  author: string;
+}
+
 function About() {
-  const [reviews, setReviews] = useState([]);
-  const [gids, setGids] = useState([]);
+  const [reviews, setReviews] = useState<Review[]>([]);
+  const [gids, setGids] = useState<Gid[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [currentIndexGid, setCurrentIndexGid] = useState(0);
   const [visible, setVisible] = useState(true);

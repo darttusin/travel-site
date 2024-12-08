@@ -3,6 +3,9 @@ from fastapi.middleware.cors import CORSMiddleware
 
 import uvicorn
 
+import random
+from datetime import datetime, timedelta
+
 
 app = FastAPI()
 
@@ -64,6 +67,20 @@ async def get_gids() -> dict:
                 "gid": "Дмитрий Иванов",
             },
         ]
+    }
+
+@app.get("/tours")
+async def get_tours() -> dict:
+    return {
+        "tours": [{
+            "price": random.randint(100, 5000),  # Случайная цена от 100 до 5000
+            "display_name": f"Тур {i + 1}",
+            "days": random.randint(1, 14),  # Случайное количество дней от 1 до 14
+            "difficulty": random.choice(["Легкий", "Средний", "Сложный"]),
+            "short_description": f"Описание тура {i + 1}. Это замечательное путешествие.",
+            "start_date": (datetime.now() + timedelta(days=random.randint(1, 30))).strftime("%Y-%m-%d"),
+            "end_date": (datetime.now() + timedelta(days=random.randint(31, 60))).strftime("%Y-%m-%d"),
+        } for i in range(20)]
     }
 
 
