@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Home from './pages/Home';
-import About from './pages/About';
-import Tours from './pages/Tours';
+import Home from './pages/home';
+import About from './pages/about';
+import Tours from './pages/tours';
 import Navigation from './components/navigation';
 import Footer from './components/footer';
 

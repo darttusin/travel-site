@@ -1,0 +1,43 @@
+.tours {
+  padding: 40px;
+  text-align: center;
+  background-color: #f9f9f9;
+}
+
+.tours-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.tour-card {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.tour-card:hover {
+  transform: scale(1.05);
+}
+
+.tour-card img {
+  width: 100%;
+  height: auto;
+}
+
+.tour-card h2 {
+  font-size: 1.5em;
+  color: #333;
+}
+
+.tour-card p {
+  color: #666;
+}
+
+.tour-card .price {
+  font-weight: bold;
+  color: #007BFF;
+}

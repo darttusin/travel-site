@@ -1,4 +1,5 @@
 import './About.css';
+import './Card.css';
 import { useState, useEffect } from 'react';
 
 function About() {
